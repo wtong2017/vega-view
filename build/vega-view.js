@@ -172,6 +172,9 @@
       p = vegaScenegraph.point(e, el);
       p[0] -= translate[0];
       p[1] -= translate[1];
+    } else {
+      translate = offset(view);
+      p = [event["clientX"] - translate[0], event["clientY"] - translate[1]];
     }
 
     event.dataflow = view;
